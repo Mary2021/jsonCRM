@@ -59,10 +59,10 @@ export default withSentry(async function handler(
                   temp[parseContent.clients[i].id] = { 
                     id: copyId, 
                     name: req.body.name, 
-                    tags: req.body.tags, 
-                    description: req.body.description, 
-                    liveUrl: req.body.liveUrl,
-                    repositoryUrl: req.body.repositoryUrl,
+                    website: req.body.website, 
+                    companyRegNr: req.body.companyRegNr, 
+                    vatRegNr: req.body.vatRegNr, 
+                    notes: req.body.notes,
                     contactAddress: req.body.contactAddress
                   }
                 }
@@ -82,10 +82,10 @@ export default withSentry(async function handler(
               parseContent.clients.push(
                 { id:Math.floor(Math.random() * 101), 
                   name: req.body.name, 
-                  tags: req.body.tags, 
-                  description: req.body.description, 
-                  liveUrl:req.body.liveUrl,
-                  repositoryUrl:req.body.repositoryUrl,
+                  website: req.body.website, 
+                  companyRegNr: req.body.companyRegNr, 
+                  vatRegNr: req.body.vatRegNr, 
+                  notes: req.body.notes,
                   contactAddress: req.body.contactAddress 
                 });
             }
