@@ -1,7 +1,7 @@
 This is a [Next.js](https://nextjs.org/) CRM app bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and [`Material UI`](https://mui.com/material-ui/getting-started/overview/).
 App data is stored and fetched from jsonfiles in components/data directory.
 
-<img src='https://github.com/Mary2021/jsonCRM/tree/main/public/screenpic.png'></img>
+<img src='https://github.com/Mary2021/jsonCRM/public/screenpic.png'></img>
 
 
 ## Getting Started
