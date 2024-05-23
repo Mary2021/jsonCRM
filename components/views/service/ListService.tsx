@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import { DataGrid} from '@mui/x-data-grid';
+import { DataGrid } from '@mui/x-data-grid';
 import styled from '@emotion/styled';
 import { Container } from '@mui/material';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
@@ -12,11 +12,12 @@ import LaunchIcon from '@mui/icons-material/Launch';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 export default function ListService() {
-  const { data = [], mutate} = useSWR('/api/service');
+  const { data = [], mutate } = useSWR('/api/service');
   const router = useRouter();
   const rows = Object(data.services)
+  //Object(data.services)
 
-  const handleEdit = (serviceId, e) => {
+  const handleEdit = (serviceId: number, e) => {
     e.preventDefault()
     router.push('/service/edit/' + serviceId) ///service/[action]/[id]
   }
@@ -37,8 +38,8 @@ export default function ListService() {
   }
 
   const columns = [
-    { field: 'id', headerName: 'id', flex: 0.1},
-    { field: 'name', headerName: 'Nimi', flex: 0.5},
+    { field: 'id', headerName: 'id', flex: 0.1 },
+    { field: 'name', headerName: 'Nimi', flex: 0.5 },
     { field: 'tags', headerName: 'tags', flex: 0.5 },
     {
       field: 'action',
@@ -66,22 +67,25 @@ export default function ListService() {
               onConfirm={() => deleteService(params.row.id)}
             >
               <IconButton size="large"><DeleteOutlineIcon /></IconButton>
-            </PopConfirm> 
+            </PopConfirm>
           </Stack>
         );
       }
     }
   ];
-  
+  console.log(data)
+  console.log(rows)
+
   return (
     <Wrap>
       <Flex>
-        <div style={{ width: '100%' }}> 
+        <div style={{ width: '100%' }}>
           <DataGrid
             onCellClick={(params, event) => {
               event.defaultMuiPrevented = true;
             }}
             rows={rows}
+            getRowId={data.serviceId}
             columns={columns}
             autoHeight={true}
             initialState={{
