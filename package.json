@@ -2,6 +2,7 @@
   "name": "jsoncrm",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mary2021.github.io/jsonCRM",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

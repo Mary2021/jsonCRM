@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: "/jsonCRM",
+  output: "export",  // <=== enables static exports
   reactStrictMode: true,
 }
 
