@@ -12,7 +12,7 @@ import { toast } from 'react-toastify';
 import { IconButton, Link, Stack } from '@mui/material';
 
 export default function ListClient() {
-  const { data = [], mutate } = useSWR('/api/client');
+  const { data = [], isLoading, mutate } = useSWR('/api/client');
   const router = useRouter();
   const rows = Object(data.clients)
 
